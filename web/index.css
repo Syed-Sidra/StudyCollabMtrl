@@ -1,0 +1,22 @@
+.index{
+    background-image: url('images/StudyclbIndex.jpg');
+    background-size: 200vh;
+}
+.mainIndex{
+    margin-left: 750px;
+    margin-top: 100px;
+    text-align: center;
+    border: 5px solid black;
+    margin-right: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 10px black;
+}
+
+.indexBtn1{
+    font-size: 20px;
+}
+
+#para{
+    font-size: 30px;
+    font-weight: 2px;
+}
