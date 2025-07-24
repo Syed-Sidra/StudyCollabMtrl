@@ -1,22 +1,141 @@
-.index{
-    background-image: url('images/StudyclbIndex.jpg');
-    background-size: 200vh;
-}
-.mainIndex{
-    margin-left: 750px;
-    margin-top: 100px;
-    text-align: center;
-    border: 5px solid black;
-    margin-right: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px 10px black;
+#mainHome{
+
+    min-height: 1000px;
+    width: 13465x;
 }
 
-.indexBtn1{
+.nav{
+    background-color: aliceblue;
+    height: 80px;
+    width: 13465px;
+    position: fixed;
+    float: right;
+}
+
+
+
+.nav #n2{
+    margin-right: 50px;
+}
+
+.nav ul{
+    list-style: none;
+
+}
+.nav ul li{
     font-size: 20px;
+    text-align: center;
+    line-height: 80px;
+    height: 50px;
+    width: 100px;
+    float: left;
+    margin-right: 100px;
+    transition: .5s;
+   
 }
 
-#para{
-    font-size: 30px;
-    font-weight: 2px;
+
+.nav ul li:hover{
+    box-shadow:0px 0px 10px 2px blue inset;
+    border-radius: 5px;
+    transition: .5s;
+    height: 50px;
+    width: 100px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 50px;
+    color: black;
 }
+
+.img{
+
+    background-image: url('images/StudyclbIndex.jpg');
+    height: 800px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: right;
+}
+
+.introImg{
+    margin: 150px 0px 0px 900px;
+
+    height: 500px;
+    text-align: center;
+    padding: 100px;
+    float: right;
+    font-size: 25px;
+}
+
+
+
+.typedText{
+    font-size: 50px;
+    font-weight: 10;
+}
+
+#aboutus{
+    background:url("images/pexels-jessbaileydesign-762686.jpg") ;
+    min-height: 400px;
+    width: 100%;
+    float: right;
+    background-size: cover;
+}
+
+.about1{
+     background:  linear-gradient(70deg,#f0f8ff,#84d2ee,#a2c2f1);
+    opacity: .6;
+    height: 100%;
+    width: 100%; 
+}
+
+.about{
+    
+    min-height: 400px;
+    width: 600px ;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 50px;
+    float: left;
+
+}
+
+.about div{
+    height: 400px;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#contactus{
+    min-height: 500px;
+    width: 100%;
+    background: linear-gradient(70deg,#f0f8ff,#84d2ee,#a2c2f1);
+    float: right;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.contactform{
+    height: 400px;
+    width: 650px;
+    border-radius: 20%;
+    margin-left: 350px;
+    margin-top: 50px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.contactform:hover{
+    box-shadow: 0px 0px 50px 10px #a2c2f1 inset;
+    backdrop-filter:blur(5px);
+    border: 4px groove #a2c2f1;
+    background: #f0f8ff,#84d2ee;
+}
+
