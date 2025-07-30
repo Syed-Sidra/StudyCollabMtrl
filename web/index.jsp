@@ -6,10 +6,13 @@
         <title>Welcome to StudyCollab</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link href="index.css" rel="stylesheet" type="text/css">
+
         <!-- Bootstrap CSS -->
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Bootstrap Icons -->
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     </head>
@@ -59,9 +62,10 @@
             </div>
 
             <!--Contact Us-->
+
             <div id="contactus"> Contact Us
                 <div class="contactform container w-50" >
-                    <form action="SendMailServlet" method="post">
+                    <form id="contact" action="SendMailServlet" method="post">
                         <label>Name : </label> 
                         <input type="text" name="username" placeholder="Enter Name" class="t" required> <br><br>
                         <label>Contact Number :</label> 
@@ -73,14 +77,15 @@
                         <button type="submit" style="background: #a2c2f1; border-radius:20px;">Send </button>
                     </form>
                 </div>
-                
+
                 <!-- Bootstrap Footer Start -->
-                
+
                 <footer class="bg-dark text-white pt-4 pb-3 mt-5 foot">
                     <div class="container">
                         <div class="row">
 
                             <!-- Quick Links -->
+
                             <div class="col-md-3">
                                 <h5>Quick Links</h5>
                                 <ul class="list-unstyled">
@@ -92,6 +97,7 @@
                             </div>
 
                             <!-- Contact Info -->
+
                             <div class="col-md-3" >
                                 <h5>Contact Us</h5>
                                 <p style="font-size: 20px;">Email: sn0255724@gmail.com</p>
@@ -100,6 +106,7 @@
                             </div>
 
                             <!-- Social Media -->
+
                             <div class="col-md-3">
                                 <h5>Follow Us</h5>
                                 <a href="#" class="text-white me-2" style="font-size: 20px;"><i class="bi bi-instagram"></i> Instagram</a><br>
@@ -108,6 +115,7 @@
                             </div>
 
                             <!-- Policies -->
+
                             <div class="col-md-3">
                                 <h5>Legal</h5>
                                 <ul class="list-unstyled" style="font-size: 20px;">
@@ -124,31 +132,38 @@
                         </div>
                     </div>
                 </footer>
+
                 <!-- Bootstrap Footer End -->
 
             </div>           
         </div>
 
+        <!--Java Script for dynamic typing--> 
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
         <script>
-            var typingEffect = new Typed(".typedText", {
-                strings: ["COLLABORATE", "LEARN", "UPLOAD"],
-                loop: true,
-                typeSpeed: 100,
-                backSpeed: 80,
-                backDelay: 2000,
-            })
+                    var typingEffect = new Typed(".typedText", {
+                    strings: ["COLLABORATE", "LEARN", "UPLOAD"],
+                            loop: true,
+                            typeSpeed: 100,
+                            backSpeed: 80,
+                            backDelay: 2000,
+                    })
 
-            const sr = ScrollReveal({
-                origin: "top",
-                distance: "20px",
-                duration: 2000,
-                reset: true,
-            });
+                    const sr = ScrollReveal({
+                    origin: "top",
+                            distance: "20px",
+                            duration: 2000,
+                            reset: true,
+                    });
+                    sr.reveal(".featured-name", {delay: 100});</script>
 
-            sr.reveal(".featured-name", {delay: 100});
+        <!--java script for contact us form-->
 
-        </script>
+       
+
+
+
     </body>
 </html>

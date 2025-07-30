@@ -78,10 +78,11 @@ public class SendMailServlet extends HttpServlet {
             
             Transport.send(msg);
             
-            out.println("<h3>Message sent successfully<h3>");
+            out.println("<h1>Message sent succesfully</h1>");
         }
         catch (MessagingException e) {
-            throw new RuntimeException(e);
+         response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+    response.getWriter().write("error");
         }
     }
 
