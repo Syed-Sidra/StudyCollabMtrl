@@ -79,6 +79,8 @@ public class SendMailServlet extends HttpServlet {
             Transport.send(msg);
             
             out.println("<h1>Message sent succesfully</h1>");
+            
+            response.sendRedirect("index.jsp");
         }
         catch (MessagingException e) {
          response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);

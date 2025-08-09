@@ -17,7 +17,7 @@
 
     </head>
     <body class="index">
-        <div id="mainHome">
+        <div id="mainHome" class="w-100">
 
             <!--Nav Bar -->
 
@@ -157,13 +157,10 @@
                             duration: 2000,
                             reset: true,
                     });
-                    sr.reveal(".featured-name", {delay: 100});</script>
-
-        <!--java script for contact us form-->
+                    sr.reveal(".featured-name", {delay: 100});
+                        </script>
 
        
-
-
 
     </body>
 </html>

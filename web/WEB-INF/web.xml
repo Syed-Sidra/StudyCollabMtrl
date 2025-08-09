@@ -3,14 +3,37 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-
     <servlet>
         <servlet-name>SendMailServlet</servlet-name>
         <servlet-class>com.main.SendMailServlet</servlet-class>
     </servlet>
+    <servlet>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.main.UploadServlet</servlet-class>
+    <multipart-config>
+        <location>/tmp</location>
+        <max-file-size>10485760</max-file-size>
+        <max-request-size>20971520</max-request-size>
+        <file-size-threshold>0</file-size-threshold>
+    </multipart-config>
+</servlet>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.main.LoginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SendMailServlet</servlet-name>
         <url-pattern>/SendMailServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/UploadServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
