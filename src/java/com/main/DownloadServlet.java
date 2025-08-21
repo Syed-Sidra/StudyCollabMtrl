@@ -6,10 +6,16 @@
 
 package com.main;
 
-import Util.DBUtil;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,18 +25,39 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author hp
  */
-public class LoginServlet extends HttpServlet {
+public class DownloadServlet extends HttpServlet {
 
    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
+            throws ServletException, IOException, SQLException {
+       
+        int id = Integer.parseInt(request.getParameter("id"));
         try (PrintWriter out = response.getWriter()) {
-          
-        }
+            Connection con = Util.DBUtil.getConnection();
+                String sql = "SELECT file_name, file_data FROM upload WHERE id=?";
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setInt(1,id);
+                ResultSet rs = ps.executeQuery();
+                if(rs.next()){
+                    String fileName = rs.getString("file_name");
+                    byte[] fileData = rs.getBytes("file_data");
+                    response.setContentType("application/octet-stream");
+                    response.setHeader("Content-Disposition","attachment; filename=\"" + fileName +"\"");
+                    
+                     OutputStream outp = response.getOutputStream();
+                outp.write(fileData);
+                outp.flush();
+            } else {
+                response.getWriter().println("File not found!");
+            }
+                rs.close();
+                ps.close();
+                con.close();
+                }
         catch(Exception e){
             e.printStackTrace();
+            response.getWriter().println("Error: " + e.getMessage());
+           
         }
     }
 
@@ -46,7 +73,11 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(DownloadServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -60,7 +91,11 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(DownloadServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to StudyCollab</title>
+        <title>Engineers Point</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link href="index.css" rel="stylesheet" type="text/css">
 
@@ -22,15 +22,16 @@
             <!--Nav Bar -->
 
             <div class="nav">
-                <div id="n1"></div>
+                <div id="n1" class="p-1 fs-4 bg-dark text-white">Engineers <br>
+                                                Point</div>
                 <div id="n2">
                     <ul>
                         <a href="#"><li>Home</li></a>
                         <a href="#aboutus"><li>About Us</li></a>
                         <a href="#contactus"><li>Contact Us</li></a>
-                        <a href="#"><li>Login</li></a>
-                        <a href="#"><li>SignUp</li></a>
-                        <a href="#"><li>Admin</li></a>
+                        <a href="login.jsp"><li>Login</li></a>
+                        <a href="signup.jsp"><li>SignUp</li></a>
+                        <a href="#" disabled><li>Admin</li></a>
                     </ul>
                 </div>
             </div>
@@ -54,8 +55,10 @@
                 <div class="about1 col-sm-12">
                     <div class="about w-50 col-sm-12">
                         About Us <br> 
-                        <div id="a1" class="m-5 w-100 col-sm-12"> <font color="blue"> Let's Learn, Upload, Collaborate to help each other for better understanding </font><br> <br>
-                            This platform is basically a <b>Study Collaborative Platform</b> designed to help, grow and learn together. You may see notes, assignments, PYQ's, practical files and many more things in this website.</div>
+                        <div id="a1" class="m-5 w-100 col-sm-12"> 
+                            This platform is basically a <b>Study Collaborative Platform</b> designed to help, grow and learn together. You may see notes, assignments, PYQ's, practical files and many more things in this website.<br><br>
+                        <font color="blue"> Let's Learn, Upload, Collaborate to help each other for better understanding </font><br> <br></div>
+                        
 
                     </div>
                 </div>

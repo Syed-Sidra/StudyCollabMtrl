@@ -15,7 +15,7 @@ import java.sql.PreparedStatement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.mail.MessagingException;
-import javax.mail.Part;
+import javax.servlet.http.Part;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServlet;
@@ -29,79 +29,51 @@ import javax.servlet.http.HttpServletResponse;
 public class UploadServlet extends HttpServlet {
 
     private String extractFileName(Part part) {
-        String[] contentDisp = null;
-        try {
-            contentDisp = part.getHeader("content-disposition");
-        } catch (MessagingException ex) {
-            Logger.getLogger(UploadServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if (contentDisp == null) {
-            return null;
-        }
-
-        for (String cd : contentDisp) {
+        String contentDisp = part.getHeader("content-disposition");
+        for (String cd : contentDisp.split(";")) {
             if (cd.trim().startsWith("filename")) {
-                return cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
+                return cd.substring(cd.indexOf("=") + 2, cd.length() - 1);
             }
         }
         return null;
     }
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, MessagingException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String userName = (String) request.getSession().getAttribute("name");
-        String title = (String) request.getAttribute("title");
-        String subject = (String) request.getAttribute("subject");
+        String userName = (String) request.getParameter("name");
+        String title = (String) request.getParameter("title");
+        String semester = (String) request.getParameter("sem");
+        String subject = (String) request.getParameter("subject");
+        String branch = (String) request.getParameter("branch");
 
         Part filePart = (Part) request.getPart("file");
         String fileName = extractFileName(filePart);
 
-        String uploadDir = request.getServletContext().getRealPath("/") + "uploads";
-
-        File uploadFolder = new File(uploadDir);
-        if (!uploadFolder.exists()) {
-            uploadFolder.mkdirs();
-        }
-
-        String filePath = uploadDir + File.separator + fileName;
-        InputStream inputStream = null;
-        try {
-            inputStream = filePart.getInputStream();
-        } catch (MessagingException ex) {
-            Logger.getLogger(UploadServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        FileOutputStream outputStream = new FileOutputStream(filePath);
-
-        byte[] buffer = new byte[1024];
-        int bytesRead;
-        while ((bytesRead = inputStream.read(buffer)) != -1) {
-            outputStream.write(buffer, 0, bytesRead);
-        }
-
-        outputStream.close();
-        inputStream.close();
+        // Get file as bytes (for BYTEA column)
+        InputStream inputStream = filePart.getInputStream();
 
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             Connection con = Util.DBUtil.getConnection();
 
-            String psql = "INSERT INTO upload(user_name,title,subject,file_name) VALUES (?,?,?,?)";
+            String psql = "INSERT INTO upload(user_name,title,subject,file_name,file_data,semester,branch) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(psql);
+
             ps.setString(1, userName);
             ps.setString(2, title);
             ps.setString(3, subject);
             ps.setString(4, fileName);
+
+            // File ko bytes me convert karke save karna
+            byte[] fileBytes = new byte[(int) filePart.getSize()];
+            inputStream.read(fileBytes);
+            inputStream.close();
+            ps.setBytes(5, fileBytes);
+
+            ps.setString(6, semester);
+            ps.setString(7,branch);
 
             int i = ps.executeUpdate();
 
@@ -128,7 +100,11 @@ public class UploadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (MessagingException ex) {
+            Logger.getLogger(UploadServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -142,7 +118,11 @@ public class UploadServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (MessagingException ex) {
+            Logger.getLogger(UploadServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

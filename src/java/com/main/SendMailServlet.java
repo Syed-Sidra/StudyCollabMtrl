@@ -70,9 +70,9 @@ public class SendMailServlet extends HttpServlet {
           msg.setSubject("New Contact form Submission");
           
             String content = "Name :" + name + "<br>" +
-                    "Email : " + email + "<br>" +
-                    "Contact : " + number + "<br>" +
-                    "Message :" + message + "<br>"  ;
+                             "Email : " + email + "<br>" +
+                             "Contact : " + number + "<br>" +
+                             "Message :" + message + "<br>"  ;
             
             msg.setContent(content, "text/html");
             

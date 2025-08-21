@@ -38,15 +38,15 @@
         }
         .navbar li a{
             color:black;
-            font-size: 40px;
-            padding:  80px;
+            font-size: 30px;
+            padding:  20px;
             text-decoration:#000000; 
         }
         .navbar li a:hover{
            
             color: red;
-            font-size: 33px;
-            padding:  60px;
+            font-size: 25px;
+            padding:  10px;
             text-decoration: none; 
             transition-duration: 1s;
         }
@@ -60,7 +60,7 @@
         <div class="navbar">
         <ul>
         <li><a href=" UserProfile.jsp"> Profile</a> </li>
-          <li><a href=" UploadDocuments.jsp"> Upload</a> </li>
+        <li><a href=" upload.jsp"> Upload</a> </li>
         <li><a href="SearchDocuments.jsp">Search</a></li>
         <li><a href="Download.jsp">Download</a></li>
         <li><a href="UserChangePswd.jsp">Change Password</a></li>

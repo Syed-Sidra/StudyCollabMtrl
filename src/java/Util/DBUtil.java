@@ -17,8 +17,8 @@ public class DBUtil {
     public static Connection getConnection(){
         Connection conn = null;
         try{
-            String url = System.getenv("JDBC_URL");
-    String username = System.getenv("JDBC_NAME");
+          String url =  System.getenv("JDBC_URL");
+   String username = System.getenv("JDBC_NAME");
     String password = System.getenv("JDBC_PASS");
     
     Class.forName("org.postgresql.Driver");

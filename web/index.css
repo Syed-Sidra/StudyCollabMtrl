@@ -8,6 +8,7 @@
     background-color: aliceblue;
     height: 80px;
     width: 13465px;
+    
     position: fixed;
     float: right;
 }
@@ -126,7 +127,7 @@
 .contactform{
     height: 400px;
     width: 600px;
-    border-radius: 100px;
+    border-radius: 20px;
     margin-top: 50px;
     margin-left: 350px;
     padding: 50px;
