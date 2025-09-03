@@ -114,7 +114,7 @@
                                 <h5>Follow Us</h5>
                                 <a href="#" class="text-white me-2" style="font-size: 20px;"><i class="bi bi-instagram"></i> Instagram</a><br>
                                 <a href="#" class="text-white me-2"style="font-size: 20px;"><i class="bi bi-linkedin"></i> LinkedIn</a><br>
-                                <a href="#" class="text-white" style="font-size: 20px;"><i class="bi bi-github"></i> GitHub</a>
+                                <a href="http://github.com/Syed-Sidra/StudyCollabMtrl" class="text-white" style="font-size: 20px;"><i class="bi bi-github"></i> GitHub</a>
                             </div>
 
                             <!-- Policies -->

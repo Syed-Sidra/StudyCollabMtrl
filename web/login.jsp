@@ -45,7 +45,7 @@
                     <input type="password" placeholder="Password"class="mt-2 w-100 box " name="password"> <br>
                   
                     <button type="submit" class="mt-3 bg-info p-2 btn w-100 fs-5"><b>LOGIN</b></button> <br>
-                    <h6 class="mt-2 text-center">Already login <a href="signup.jsp">click here</a></h6>
+                    <h6 class="mt-2 text-center">Create an account <a href="signup.jsp">click here</a></h6>
                     
 
                     </form>

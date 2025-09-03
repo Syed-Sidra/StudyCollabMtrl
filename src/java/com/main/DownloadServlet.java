@@ -32,7 +32,7 @@ public class DownloadServlet extends HttpServlet {
             throws ServletException, IOException, SQLException {
        
         int id = Integer.parseInt(request.getParameter("id"));
-        try (PrintWriter out = response.getWriter()) {
+        try {
             Connection con = Util.DBUtil.getConnection();
                 String sql = "SELECT file_name, file_data FROM upload WHERE id=?";
                 PreparedStatement ps = con.prepareStatement(sql);
@@ -41,12 +41,14 @@ public class DownloadServlet extends HttpServlet {
                 if(rs.next()){
                     String fileName = rs.getString("file_name");
                     byte[] fileData = rs.getBytes("file_data");
-                    response.setContentType("application/octet-stream");
-                    response.setHeader("Content-Disposition","attachment; filename=\"" + fileName +"\"");
-                    
-                     OutputStream outp = response.getOutputStream();
+                     response.setContentType("application/pdf");
+                response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+                response.setContentLength(fileData.length);
+
+                OutputStream outp = response.getOutputStream();
                 outp.write(fileData);
                 outp.flush();
+                outp.close();
             } else {
                 response.getWriter().println("File not found!");
             }

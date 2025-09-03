@@ -73,12 +73,15 @@ public class UploadServlet extends HttpServlet {
             ps.setBytes(5, fileBytes);
 
             ps.setString(6, semester);
-            ps.setString(7,branch);
+            ps.setString(7, branch);
 
             int i = ps.executeUpdate();
 
             if ((i > 0)) {
-                out.println("File uploaded and saved successfully");
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('File uploaded successfully!');");
+                out.println("location='upload.jsp';");  // popup ke baad redirect karega
+                out.println("</script>");
             } else {
                 out.println("Upload failed");
             }

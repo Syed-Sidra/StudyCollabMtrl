@@ -6,13 +6,15 @@
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/src/java/com/main/FileModel.java</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/src/java/com/main/SearchServlet.java</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/web/index.jsp</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/web/login.jsp</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/src/java/com/main/DownloadServlet.java</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/src/java/com/main/UploadServlet.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/web/results.jsp</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/web/upload.jsp</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/src/java/com/main/SignupServlet.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/src/java/com/main/SendMailServlet.java</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/web/search.jsp</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/web/UserHome.jsp</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/web/index.css</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/StudyCollabMtrl/src/java/com/main/LoginServlet.java</file>
         </group>
     </open-files>
 </project-private>
