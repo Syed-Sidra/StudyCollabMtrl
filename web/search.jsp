@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <title>JSP Page</title>
+        <title>Search</title>
         <style>
             .bd{
                  background:  linear-gradient(70deg,#f0f8ff,#84d2ee,#a2c2f1);

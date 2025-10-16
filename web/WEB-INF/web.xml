@@ -32,6 +32,10 @@
         <servlet-name>DownloadServlet</servlet-name>
         <servlet-class>com.main.DownloadServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChangePasswordServlet</servlet-name>
+        <servlet-class>com.main.ChangePasswordServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SendMailServlet</servlet-name>
         <url-pattern>/SendMailServlet</url-pattern>
@@ -56,6 +60,11 @@
         <servlet-name>DownloadServlet</servlet-name>
         <url-pattern>/download</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangePasswordServlet</servlet-name>
+        <url-pattern>/ChangePasswordServlet</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

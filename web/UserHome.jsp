@@ -4,12 +4,14 @@
     Author     : ASUS
 --%>
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>DashBoard</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
         <style>
             /* CSS RESET  */
             body {
@@ -61,7 +63,8 @@
             }
 
             .card {
-                background: white;
+                
+                background: linear-gradient(70deg,#f0f8ff,#84d2ee,#a2c2f1);;
                 padding: 20px;
                 margin: 20px;
                 border-radius: 10px;
@@ -104,26 +107,28 @@
     <div class="card">
         <h3>Search Files</h3>
         <p>Find your uploaded documents easily.</p>
-        <a href="search.jsp" class="btn">Go to Search</a>
+        <a href="search.jsp" class="btn bg-info">Go to Search</a>
     </div>
 
     <div class="card">
         <h3>Upload File</h3>
         <p>Upload your documents in PDF format.</p>
-        <a href="upload.jsp" class="btn">Upload Now</a>
+        <a href="upload.jsp" class="btn bg-info">Upload Now</a>
     </div>
 
+  <!--
     <div class="card">
         <h3>Profile</h3>
-        <p>Update your personal details.</p>
+        <p>Update your personal details.</p> 
         <a href="profile.jsp" class="btn">Edit Profile</a>
     </div>
-
+-->
+<!--
     <div class="card">
         <h3>Change Password</h3>
         <p>Secure your account by updating password.</p>
         <a href="changePassword.jsp" class="btn">Change</a>
     </div>
-
+-->
 </body>
 </html>

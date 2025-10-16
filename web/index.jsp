@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Engineers Point</title>
+        <title>Engineer's Stack</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link href="index.css" rel="stylesheet" type="text/css">
 
@@ -22,8 +22,12 @@
             <!--Nav Bar -->
 
             <div class="nav">
-                <div id="n1" class="p-1 fs-4 bg-dark text-white">Engineers <br>
-                                                Point</div>
+               <div id="n1" class="p-2 fs-4 d-flex align-items-center ">
+    <img src="images/WebLogo1.png" alt="Engineers Stack Logo" 
+         style="height:50px; width:auto; margin-right:10px; border-radius:8px;">
+    
+</div>
+
                 <div id="n2">
                     <ul>
                         <a href="#"><li>Home</li></a>
@@ -40,6 +44,7 @@
 
             <div class="img" id="home">
                 <div class="introImg">
+                    <h1><bold>WELCOME TO </bold><i><font color="linear-gradient(70deg,#f0f8ff,#84d2ee,#a2c2f1);">Engineer's Stack</font></i></h1>
                     <h1>LET'S </h1>
 
                     <div class="featured-name">
@@ -113,8 +118,8 @@
                             <div class="col-md-3">
                                 <h5>Follow Us</h5>
                                 <a href="#" class="text-white me-2" style="font-size: 20px;"><i class="bi bi-instagram"></i> Instagram</a><br>
-                                <a href="#" class="text-white me-2"style="font-size: 20px;"><i class="bi bi-linkedin"></i> LinkedIn</a><br>
-                                <a href="http://github.com/Syed-Sidra/StudyCollabMtrl" class="text-white" style="font-size: 20px;"><i class="bi bi-github"></i> GitHub</a>
+                                <a href="https://www.linkedin.com/in/syed-sidra-noor-3b521a293/" class="text-white me-2"style="font-size: 20px;"><i class="bi bi-linkedin"></i> LinkedIn</a><br>
+                                <a href="http://github.com/Syed-Sidra/" class="text-white" style="font-size: 20px;"><i class="bi bi-github"></i> GitHub</a>
                             </div>
 
                             <!-- Policies -->
@@ -131,7 +136,7 @@
 
                         <hr class="bg-light">
                         <div class="text-center" style="font-size: 20px;">
-                            <p class="mb-0">&copy; 2025 StudyCollab. All rights reserved.</p>
+                            <p class="mb-0">&copy; 2025 Engineer's Stack. All rights reserved.</p>
                         </div>
                     </div>
                 </footer>
