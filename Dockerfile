@@ -1,5 +1,5 @@
 # Use official GlassFish image
-FROM glassfish:6.2.5
+FROM glassfish:4.0
 
 # Copy WAR file into GlassFish autodeploy directory
 COPY dist/StudyCollabMtrl.war /glassfish5/glassfish/domains/domain1/autodeploy/ROOT.war
