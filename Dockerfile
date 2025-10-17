@@ -1,10 +1,10 @@
-# Base image
-FROM glassfish:6.2.5-jdk17
+# Use official GlassFish image
+FROM glassfish:6.2.5
 
-# Copy WAR file from your local project (relative path)
-COPY StudyCollabMtrl.war /glassfish5/glassfish/domains/domain1/autodeploy/ROOT.war
+# Copy WAR file into GlassFish autodeploy directory
+COPY dist/StudyCollabMtrl.war /glassfish5/glassfish/domains/domain1/autodeploy/ROOT.war
 
-# Expose the GlassFish port
+# Expose default GlassFish HTTP port
 EXPOSE 8080
 
 # Start GlassFish domain
